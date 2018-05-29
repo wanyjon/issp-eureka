@@ -1,8 +1,10 @@
 spring:
   application:
     name: issp-eureka-server
+  freemarker:
+    suffix: .html
 server:
-  port: 9701
+  port: 9702
 eureka:
   instance:
     hostname: localhost
@@ -11,6 +13,8 @@ eureka:
     register-with-eureka: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false
 management:
   security:
     enabled: false
